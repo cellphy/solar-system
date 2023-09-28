@@ -5,8 +5,21 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetNames(data) {
-  // Your code goes here...
+  const planetNames = data.planets;
+  const planetArr = planetNames.map(function (pNames) {
+  return pNames.name;
+});
+  return planetArr;
 }
+
+//OR with filter method
+// export function getPlanetNames(data) {
+//   const planet = data.planets;
+//   const allPlanetsNames = planet.filter(function(a) {
+//     return a.names;
+//   });
+//   return allPlanetsNames; 
+//     }
 
 
 
