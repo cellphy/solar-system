@@ -5,11 +5,9 @@ import { data } from "../data/data";
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
 export function getEarthData(data) {
-  const earthData = data.planets.filter(planet => planet.name === 'Earth')[0];
-  return earthData;
+  return data.planets
+  .filter((planet) => planet.name === 'Earth')[0];  
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-9"

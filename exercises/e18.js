@@ -5,23 +5,24 @@
  */
 
 export function getGreatestDiscoveryYear(data) {
-  let frequency = {};    //created an empty object to store discoveries for each year 
-  for (let asteroid of data.asteroids) {    
+  let frequency = {};
+  for (let asteroid of data.asteroids) {
     let year = asteroid.discoveryYear;    
-    frequency[year] = frequency[year] ? frequency[year] + 1 : 1;
-  }   
-   let greatestYear = null;
-   let greatestFrequency = 0;   
-   for (let year in frequency) {    
-     let currentFrequency = frequency[year];     
-     if (currentFrequency > greatestFrequency) {
-       greatestYear = year;
-       greatestFrequency = currentFrequency;
-     }
-   }   
-   greatestYear = Number(greatestYear);  
+    frequency[year] = (frequency[year] || 0) + 1;
+  }
+  let greatestYear = null;
+  let greatestFrequency = 0;
+  for (let year in frequency) {
+    let currentFrequency = frequency[year];
+    if (currentFrequency > greatestFrequency) {
+      greatestYear = year;
+      greatestFrequency = currentFrequency;
+    }
+  }
+  greatestYear = Number(greatestYear);
   return greatestYear;
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-18"
